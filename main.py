@@ -8,6 +8,7 @@ import geobr
 import matplotlib.pyplot as plt
 import unidecode
 import json
+from fastapi.openapi.utils import get_openapi
 pd.set_option('display.max_rows', None)
 vagas_todas = {}
 site = []
@@ -98,3 +99,19 @@ def resultado(site, vagas_todas):
     vagas_todas_df = pd.DataFrame(vagas_todas)
     return vagas_todas_df.T
     
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="My API",
+        version="1.0.0",
+        description="This is a very custom OpenAPI schema",
+        routes=app.routes,
+    )
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
+
+app.openapi = custom_openapi
+
+with open("openapi.json", "w") as f:
+    json.dump(custom_openapi(), f)
