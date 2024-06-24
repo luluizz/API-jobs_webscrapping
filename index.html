@@ -1,33 +1,19 @@
+<!-- HTML for static distribution bundle build -->
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swagger UI</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.52.5/swagger-ui.css"
-        integrity="sha512-KnVJne8jrtVO1bh4dshS8wUub47h21yoZ0Z1rI/Og+X8N3RbD1VpohTKo8I5hb+nH1KfOlr9K/2GOsFno2s6mA=="
-        crossorigin="anonymous" />
-</head>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  </head>
 
-<body>
+  <body>
     <div id="swagger-ui"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.52.5/swagger-ui-bundle.js"
-        integrity="sha512-/4AQMt+xAqHRs/bm/ZXBcWnL/hZCax9CjvO4N7eRaP4hP2BF0rcU7oJQEkYl4H4wFF4Knt9loFJMXWyvAa3ueQ=="
-        crossorigin="anonymous"></script>
-    <script>
-        window.onload = function () {
-            // Fetch the OpenAPI schema from the JSON file
-            fetch('openapi.json')
-                .then(response => response.json())
-                .then(json => {
-                    const ui = SwaggerUIBundle({
-                        spec: json,
-                        dom_id: '#swagger-ui',
-                    })
-                })
-        }
-    </script>
-</body>
-
+    <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
+    <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+    <script src="./swagger-initializer.js" charset="UTF-8"> </script>
+  </body>
 </html>
