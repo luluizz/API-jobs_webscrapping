@@ -13,7 +13,6 @@ pd.set_option('display.max_rows', None)
 vagas_todas = {}
 site = []
 
-
 app = FastAPI()
 
 if __name__ == "__main__":  
