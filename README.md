@@ -34,3 +34,4 @@ Digite a sigla do estado que deseja pesquisar e o nome da cidade.
 
 Em response body estará seu resultado.
 ![image](https://github.com/luluizz/API-jobs_webscrapping/assets/118929650/3ed9beb8-67d9-41cc-a016-e3f2c7f6b734)
+# API-jobs_webscrapping-copia
