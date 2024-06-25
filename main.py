@@ -13,6 +13,7 @@ pd.set_option('display.max_rows', None)
 vagas_todas = {}
 site = []
 
+
 app = FastAPI()
 
 if __name__ == "__main__":  
@@ -110,8 +111,3 @@ def custom_openapi():
     )
     app.openapi_schema = openapi_schema
     return app.openapi_schema
-
-app.openapi = custom_openapi
-
-with open("openapi.json", "w") as f:
-    json.dump(custom_openapi(), f)
