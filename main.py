@@ -14,13 +14,6 @@ vagas_todas = {}
 site = []
 
 app = FastAPI()
-<<<<<<< HEAD
-=======
-
-#if __name__ == "__main__":  
-#    import uvicorn 
-#    uvicorn.run(app, host="localhost", port=8000)
->>>>>>> c45b2e16803dd08e8a6ce95737d1326bb1d46527
     
 @app.get("/")
 def pegar_local(sigla_estado: str, cidade:str):
