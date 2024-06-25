@@ -15,9 +15,9 @@ site = []
 
 app = FastAPI()
 
-if __name__ == "__main__":  
-    import uvicorn 
-    uvicorn.run(app, host="localhost", port=8000)
+#if __name__ == "__main__":  
+#    import uvicorn 
+#    uvicorn.run(app, host="localhost", port=8000)
     
 @app.get("/")
 def pegar_local(sigla_estado: str, cidade:str):
