@@ -8,11 +8,19 @@ import geobr
 import matplotlib.pyplot as plt
 import unidecode
 import json
+from fastapi.openapi.utils import get_openapi
 pd.set_option('display.max_rows', None)
 vagas_todas = {}
 site = []
 
 app = FastAPI()
+<<<<<<< HEAD
+=======
+
+#if __name__ == "__main__":  
+#    import uvicorn 
+#    uvicorn.run(app, host="localhost", port=8000)
+>>>>>>> c45b2e16803dd08e8a6ce95737d1326bb1d46527
     
 @app.get("/")
 def pegar_local(sigla_estado: str, cidade:str):
@@ -94,3 +102,14 @@ def resultado(site, vagas_todas):
     vagas_todas_df = pd.DataFrame(vagas_todas)
     return vagas_todas_df.T
     
+def custom_openapi():
+    if app.openapi_schema:
+        return app.openapi_schema
+    openapi_schema = get_openapi(
+        title="My API",
+        version="1.0.0",
+        description="This is a very custom OpenAPI schema",
+        routes=app.routes,
+    )
+    app.openapi_schema = openapi_schema
+    return app.openapi_schema
